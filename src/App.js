@@ -10,6 +10,7 @@ import {
   InputLabel,
   FormControl,
   Button,
+  TextField
 } from "@mui/material";
 
 const client = new ApolloClient({
@@ -108,12 +109,18 @@ function CharacterList() {
           </Select>
         </FormControl>
         <FormControl>
-          <InputLabel htmlFor="species-input">{t.species}</InputLabel>
-          <input
+          {/* <InputLabel htmlFor="species-input">{t.species}</InputLabel> */}
+          {/* <input
             id="species-input"
             type="text"
             onChange={(e) => setSpecies(e.target.value)}
             style={{ padding: "8.5px 14px", border: "1px solid #ccc", borderRadius: 4 }}
+          /> */}
+          <TextField
+            label={t.species}
+            variant="outlined"
+            value={species}
+            onChange={(e) => setSpecies(e.target.value)}
           />
         </FormControl>
         <FormControl sx={{ minWidth: 120 }}>
